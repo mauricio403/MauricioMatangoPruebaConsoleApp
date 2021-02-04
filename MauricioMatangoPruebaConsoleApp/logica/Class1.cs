@@ -4,32 +4,13 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace MauricioMatangoPruebaConsoleApp
+
+
+
+namespace logica
 {
-    class Program
+    public class logicaParalelismo
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Prueba Mauricio Matango");
-
-            Console.WriteLine("Aqui hay un edificio que cuenta con los siguientes datos: ");
-
-            var pisos = 12;
-
-            Console.WriteLine("Número de pisos: " + pisos);
-
-            var departamentos = 8;
-
-            Console.WriteLine("Dentro de cada piso hay " + departamentos);
-
-           
-
-
-            Console.ReadLine();
-
-
-
-        }
         public static void numeroPersonas()
         {
             int[,] Matriza = new int[12, 8];
@@ -47,7 +28,7 @@ namespace MauricioMatangoPruebaConsoleApp
 
             }
 
-           for (int filas = 0; filas < Matriza.GetLength(0); filas++)
+            Parallel.for (int filas = 0; filas < Matriza.GetLength(0); filas++)
             {
                 for (int columna = 0; columna < Matriza.GetLength(1); columna++)
                 {
